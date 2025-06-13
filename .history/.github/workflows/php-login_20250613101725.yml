@@ -1,0 +1,39 @@
+name: CI/CD PHP Login # Nome da automação que vai aparecer no GitHub Actions
+
+on: # Define quando a automação vai ser executada
+  push: # Sempre que der um git push
+    branches:
+      - master # ...na branch "master"
+  pull_request: # Também roda em pull requests
+
+jobs: # Aqui definimos os "trabalhos" que serão feitos
+  build: # Nome do job (pode ser qualquer identificador)
+    runs-on: ubuntu-latest # Sistema operacional (Linux Ubuntu)
+
+    steps: # Cada "step" é uma etapa da automação
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+
+      - name: Instalar dependências
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y php-cli php-mbstring
+          echo "Dependências instaladas."
+
+      - name: Rodar testes
+        run: |
+          echo "Simulando testes..."
+          php -l index.php
+
+      - name: Build do projeto
+        run: |
+          echo "Build realizado com sucesso!"
+
+      - name: Deploy (simulado)
+        run: |
+          echo "Realizando deploy..."
