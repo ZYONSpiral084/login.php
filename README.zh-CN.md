@@ -15,7 +15,8 @@
 
 - `index.php` — 登录表单（示例凭据）。  
 - `.github/workflows/login.yml` — 可重用工作流。  
-- `.github/workflows/php-login.yml` — CI 工作流（push/PR）。
+- `.github/workflows/php-login.yml` — CI 工作流（push/PR）。  
+- `README.pt-BR.md` / `README.zh-CN.md` — 翻译文档。
 
 ---
 

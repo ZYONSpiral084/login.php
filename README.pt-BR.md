@@ -5,6 +5,11 @@
 
 ---
 
+<!-- Badges (substitua por URLs reais se desejar) -->
+[![License](https://img.shields.io/badge/license-academic-lightgrey)](#) [![CI](https://img.shields.io/badge/ci-github--actions-blue)](#)
+
+---
+
 ## 📌 Resumo
 
 Exemplo prático de CI/CD com PHP 8.2 para estudo. Contém `index.php` (login simples) e dois workflows do GitHub Actions: um reusável (`login.yml`) e outro específico (`php-login.yml`) que dispara em push/PR.
@@ -15,7 +20,8 @@ Exemplo prático de CI/CD com PHP 8.2 para estudo. Contém `index.php` (login si
 
 - `index.php` — formulário de login simples (credenciais de exemplo).  
 - `.github/workflows/login.yml` — workflow reutilizável.  
-- `.github/workflows/php-login.yml` — workflow de CI para push/PR.
+- `.github/workflows/php-login.yml` — workflow de CI para push/PR.  
+- `README.pt-BR.md` / `README.zh-CN.md` — documentações traduzidas.
 
 ---
 
@@ -28,11 +34,19 @@ php -S localhost:8000
 
 ---
 
-## ✅ Segurança & Observações
+## 🧾 Exemplo `index.php` (mínimo)
+
+> Arquivo intencionalmente mínimo — apenas para aprendizado. Não usar em produção.
+
+O conteúdo do `index.php` de exemplo está descrito no README principal. Mantê-lo simples para fins educacionais.
+
+---
+
+## ✅ Segurança & observações
 
 - Não comite credenciais reais; mantenha credenciais de exemplo apenas para demonstração.  
 - Use GitHub Secrets para valores sensíveis.  
-- Este repositório valida sintaxe PHP e simula etapas de CI — adapte para uso real.
+- Esta demo valida sintaxe PHP e simula etapas de CI — adapte para uso real.
 
 ---
 
@@ -40,7 +54,7 @@ php -S localhost:8000
 
 ```bash
 git checkout -b feature/php-ci
-git add index.php .github/workflows/*.yml
+git add index.php .github/workflows/*.yml README*.md
 git commit -m "Improve PHP CI and add comments"
 git push origin feature/php-ci
 ```
